@@ -63,15 +63,15 @@
     /* ── WRAPPER ── */
     .deck {
       width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
     }
 
     /* ── SECTION BASE ── */
     .sec {
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       padding: 80px 64px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     /* ── LABEL ── */
@@ -128,7 +128,11 @@
       overflow: hidden;
       background: var(--red);
       padding: 13px 0;
-      margin: 0 -64px;
+      margin: 0 calc(-50vw + 50%);
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
     }
     .ticker-track {
       display: flex;
@@ -604,7 +608,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 720px) {
       .sec { padding: 56px 24px; }
-      .ticker-wrap { margin: 0 -24px; }
+      .ticker-wrap { margin: 0 calc(-50vw + 50%); width: 100vw; }
       .def-block,
       .prob-grid,
       .dar-grid,
