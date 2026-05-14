@@ -6,40 +6,40 @@
   <title>Sistema de Conteúdo com IA — Nebu</title>
   <meta name="description" content="Produção sistemática de conteúdo com inteligência instalada na marca. A Nebu configura, roda e entrega. Você aprova." />
   <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sistema de Conteúdo com IA — Nebu" />
   <meta property="og:description" content="Produção sistemática de conteúdo com inteligência instalada na marca. A Nebu configura, roda e entrega. Você aprova." />
   <meta property="og:url" content="https://sistema.nebucompany.com.br" />
   <meta property="og:site_name" content="Nebu Company" />
   <meta property="og:locale" content="pt_BR" />
-
-  <!-- Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sistema de Conteúdo com IA — Nebu" />
   <meta name="twitter:description" content="Produção sistemática de conteúdo com inteligência instalada na marca." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=block" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=block" rel="stylesheet" />
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=block');
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:      #0a0a0a;
-      --bg2:     #111111;
-      --bg3:     #161616;
-      --white:   #ffffff;
-      --red:     #c8102e;
-      --red-soft:rgba(200,16,46,0.10);
-      --muted:   #555555;
-      --muted2:  #888888;
-      --border:  #1e1e1e;
-      --border2: #2a2a2a;
-  --font-display: 'Roboto', sans-serif;
-      --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --bg:       #ffffff;
+      --bg2:      #f5f5f5;
+      --bg3:      #eeeeee;
+      --ink:      #0a0a0a;
+      --red:      #c8102e;
+      --red-soft: rgba(200,16,46,0.08);
+      --muted:    #999999;
+      --muted2:   #666666;
+      --border:   #e0e0e0;
+      --border2:  #cccccc;
+      --fd: 'Roboto', sans-serif;
+      --fb: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --radius: 20px;
+      --radius-sm: 12px;
     }
 
     html { scroll-behavior: smooth; }
@@ -47,20 +47,27 @@
     body {
       font-family: var(--fb);
       background: var(--bg);
-      color: var(--white);
+      color: var(--ink);
       font-size: 17px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 
     em { color: var(--red); font-style: italic; }
 
+    /* ── WRAPPER ── */
     .deck {
       width: 100%;
       max-width: 960px;
       margin: 0 auto;
     }
 
+    /* ── SECTION BASE ── */
     .sec {
       position: relative;
       overflow: hidden;
@@ -68,33 +75,35 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .label {
-      font-family: var(--fb);
-      font-size: 0.65rem;
-      font-weight: 500;
+    /* ── LABEL ── */
+    .scene-label {
+      font-family: var(--fd);
+      font-size: 0.7rem;
+      font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--muted);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 48px;
     }
-    .label::before {
+    .scene-label::before {
       content: '';
       display: block;
-      width: 24px;
+      width: 28px;
       height: 1px;
       background: var(--muted);
       flex-shrink: 0;
     }
 
+    /* ── DISPLAY TYPE ── */
     .xl {
       font-family: var(--fd);
       font-weight: 900;
       font-size: clamp(4.5rem, 11vw, 9.5rem);
       line-height: 0.88;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
       text-transform: uppercase;
     }
 
@@ -103,23 +112,23 @@
       font-weight: 900;
       font-size: clamp(3rem, 7vw, 6.5rem);
       line-height: 0.9;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
       text-transform: uppercase;
     }
 
-    .body {
+    .body-txt {
       font-size: 1rem;
       color: var(--muted2);
       line-height: 1.75;
       max-width: 560px;
     }
-    .body strong { color: var(--white); font-weight: 600; }
+    .body-txt strong { color: var(--ink); font-weight: 700; }
 
-    /* TICKER */
+    /* ── TICKER ── */
     .ticker-wrap {
       overflow: hidden;
       background: var(--red);
-      padding: 12px 0;
+      padding: 13px 0;
       margin: 0 -64px;
     }
     .ticker-track {
@@ -130,8 +139,8 @@
     .ticker-item {
       font-family: var(--fd);
       font-weight: 700;
-      font-size: 0.78rem;
-      letter-spacing: 0.22em;
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.9);
       white-space: nowrap;
@@ -142,26 +151,39 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* BTN */
-    .btn {
+    /* ── BTN ── */
+    .btn-pill {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       background: var(--red);
-      color: var(--white);
+      color: #ffffff;
       font-family: var(--fd);
       font-weight: 700;
       font-size: 1rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 18px 36px;
+      padding: 16px 32px;
       border-radius: 100px;
       transition: background 0.2s, transform 0.2s;
     }
-    .btn:hover { background: #a50d25; transform: translateY(-2px); }
+    .btn-pill:hover { background: #a50d25; transform: translateY(-1px); }
 
-    /* ── SEC 1 ── */
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+
+    /* ══════════════════════════════
+       SEC 1 — CAPA + PROBLEMA
+    ══════════════════════════════ */
     #sec1 {
       min-height: 100vh;
       display: flex;
@@ -182,6 +204,7 @@
       font-size: 0.9rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--ink);
     }
 
     .s1-meta {
@@ -194,20 +217,33 @@
     }
 
     .s1-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
+      font-family: var(--fb);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 24px;
+      color: var(--muted2);
+      margin-bottom: 28px;
     }
 
+    .s1-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    /* problema */
     .prob-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       overflow: hidden;
     }
 
@@ -216,15 +252,15 @@
       padding: 36px 32px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
 
     .prob-n {
       font-family: var(--fd);
       font-weight: 900;
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       color: var(--red);
-      opacity: 0.5;
+      opacity: 0.55;
       line-height: 1;
     }
 
@@ -234,7 +270,9 @@
       line-height: 1.6;
     }
 
-    /* ── SEC 2 ── */
+    /* ══════════════════════════════
+       SEC 2 — O QUE É + COMO FUNCIONA
+    ══════════════════════════════ */
     .def-block {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -245,25 +283,26 @@
 
     .def-card {
       padding: 40px 36px;
-      background: var(--bg3);
+      background: var(--bg2);
       border: 1px solid var(--border2);
       border-left: 3px solid var(--red);
-      border-radius: 16px;
+      border-radius: var(--radius);
     }
 
-    .def-card p { font-size: 1.05rem; color: #ccc; line-height: 1.7; }
+    .def-card p { font-size: 1.05rem; color: var(--muted2); line-height: 1.75; }
 
     .def-tagline {
       margin-top: 24px;
       font-family: var(--fd);
       font-weight: 900;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       line-height: 1.3;
-      color: var(--muted2);
+      color: var(--muted);
     }
 
+    /* steps */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -274,18 +313,20 @@
     .step-card {
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       padding: 40px 32px;
       position: relative;
       overflow: hidden;
+      transition: border-color 0.25s;
     }
+    .step-card:hover { border-color: var(--border2); }
 
     .step-bg-n {
       position: absolute;
       font-family: var(--fd);
       font-weight: 900;
       font-size: 9rem;
-      color: rgba(200,16,46,0.04);
+      color: rgba(200,16,46,0.05);
       line-height: 1;
       right: 16px;
       bottom: -12px;
@@ -293,26 +334,36 @@
       user-select: none;
     }
 
-    .step-n {
+    .step-tag {
+      font-family: var(--fb);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 28px;
+    }
+
+    .step-num {
       font-family: var(--fd);
       font-weight: 900;
-      font-size: 3.5rem;
+      font-size: 4.5rem;
       color: var(--border2);
       line-height: 1;
       margin-bottom: 20px;
+      letter-spacing: -0.02em;
     }
 
-    .step-name {
+    .step-title {
       font-family: var(--fd);
       font-weight: 900;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      line-height: 1;
+      line-height: 1.1;
       margin-bottom: 14px;
     }
 
-    .step-desc { font-size: 0.9rem; color: var(--muted2); line-height: 1.65; }
+    .step-desc { font-size: 0.9rem; color: var(--muted2); line-height: 1.7; }
 
     .step-detail {
       margin-top: 16px;
@@ -322,10 +373,11 @@
       color: var(--muted);
       line-height: 1.6;
     }
-
     .step-detail strong { color: var(--muted2); font-weight: 600; }
 
-    /* ── SEC 3 ── */
+    /* ══════════════════════════════
+       SEC 3 — DÁ + RECEBE + TEMPO
+    ══════════════════════════════ */
     .dar-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -336,7 +388,7 @@
     .dar-card {
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       padding: 32px 28px;
       display: flex;
       flex-direction: column;
@@ -348,7 +400,7 @@
     .dar-title {
       font-family: var(--fd);
       font-weight: 900;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       line-height: 1;
@@ -358,15 +410,15 @@
 
     .callout-warn {
       margin-top: 24px;
-      padding: 24px 28px;
+      padding: 28px 32px;
       background: var(--red-soft);
-      border: 1px solid rgba(200,16,46,0.2);
-      border-radius: 12px;
-      font-size: 0.88rem;
-      color: #ccc;
+      border: 1px solid rgba(200,16,46,0.18);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--muted2);
       line-height: 1.65;
     }
-    .callout-warn strong { color: var(--red); font-weight: 600; }
+    .callout-warn strong { color: var(--red); font-weight: 700; }
 
     .recebe-rows {
       display: flex;
@@ -374,7 +426,7 @@
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       overflow: hidden;
       margin-top: 40px;
     }
@@ -391,7 +443,7 @@
     .recebe-lbl {
       font-family: var(--fd);
       font-weight: 900;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--red);
@@ -399,7 +451,7 @@
     }
 
     .recebe-desc { font-size: 0.93rem; color: var(--muted2); line-height: 1.65; }
-    .recebe-desc strong { color: var(--white); font-weight: 600; }
+    .recebe-desc strong { color: var(--ink); font-weight: 700; }
 
     .tempo-compare {
       display: grid;
@@ -411,7 +463,7 @@
     .tempo-col {
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       overflow: hidden;
     }
 
@@ -434,6 +486,7 @@
       font-weight: 900;
       font-size: clamp(3rem, 6vw, 5.5rem);
       line-height: 1;
+      letter-spacing: -0.02em;
       margin-bottom: 6px;
     }
 
@@ -448,18 +501,20 @@
 
     .callout-info {
       margin-top: 24px;
-      padding: 24px 28px;
+      padding: 28px 32px;
       background: var(--bg3);
       border: 1px solid var(--border2);
       border-left: 3px solid var(--red);
-      border-radius: 12px;
+      border-radius: var(--radius-sm);
       font-size: 0.9rem;
       color: var(--muted2);
       line-height: 1.65;
     }
-    .callout-info strong { color: var(--white); }
+    .callout-info strong { color: var(--ink); }
 
-    /* ── SEC 4 ── */
+    /* ══════════════════════════════
+       SEC 4 — DIFERENCIAL + CTA
+    ══════════════════════════════ */
     .diff-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -470,18 +525,21 @@
     .diff-card {
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: var(--radius-sm);
       padding: 32px 28px;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      transition: border-color 0.25s;
     }
+    .diff-card:hover { border-color: var(--border2); }
 
     .diff-tag {
-      font-size: 0.6rem;
+      font-size: 0.62rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--red);
+      font-weight: 700;
     }
 
     .diff-title {
@@ -495,6 +553,7 @@
 
     .diff-body { font-size: 0.88rem; color: var(--muted2); line-height: 1.65; }
 
+    /* CTA final */
     .cta-block {
       position: relative;
       overflow: hidden;
@@ -508,7 +567,7 @@
       font-family: var(--fd);
       font-weight: 900;
       font-size: 30vw;
-      color: rgba(255,255,255,0.015);
+      color: rgba(200,16,46,0.04);
       line-height: 1;
       right: -0.05em;
       bottom: -0.1em;
@@ -535,13 +594,19 @@
       text-transform: uppercase;
       color: var(--muted2);
     }
+    .cta-tagline { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
 
-    .cta-tagline { font-size: 0.75rem; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; }
+    /* ── SUBHEADING DIVIDER ── */
+    .sub-divider {
+      margin-top: 80px;
+      padding-top: 80px;
+      border-top: 1px solid var(--border);
+    }
 
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
     @media (max-width: 720px) {
-      .sec { padding: 56px 28px; }
-      .ticker-wrap { margin: 0 -28px; }
+      .sec { padding: 56px 24px; }
+      .ticker-wrap { margin: 0 -24px; }
       .def-block,
       .prob-grid,
       .dar-grid,
@@ -550,7 +615,7 @@
       .steps-grid { grid-template-columns: 1fr; }
       .recebe-row { grid-template-columns: 1fr; gap: 6px; }
       .s1-top { flex-direction: column; gap: 16px; }
-      .cta-foot { flex-direction: column; align-items: flex-start; }
+      .s1-foot, .cta-foot { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -558,44 +623,66 @@
 <div class="deck">
 
   <!-- ══════════════════════════════
-       SEC 1 — APRESENTAÇÃO + PROBLEMA
+       SEC 1 — CAPA + PROBLEMA
   ══════════════════════════════ -->
   <section class="sec" id="sec1">
 
-    <div class="s1-top">
+    <div class="s1-top reveal">
       <div class="s1-logo">Nebu<em>.</em></div>
       <div class="s1-meta">Sistema de Conteúdo com IA<br>2026</div>
     </div>
 
-    <div style="margin-top: 64px;">
-      <p class="s1-eyebrow">Deck de produto</p>
-      <div class="xl">O processo<br>é o <em>conteúdo.</em></div>
-    </div>
-
-    <div class="ticker-wrap" style="margin-top: 48px;">
-      <div class="ticker-track">
-        <span class="ticker-item">DNA configurado</span><span class="ticker-item">·</span>
-        <span class="ticker-item">Sistema editorial próprio</span><span class="ticker-item">·</span>
-        <span class="ticker-item">Template visual</span><span class="ticker-item">·</span>
-        <span class="ticker-item">Processo repetível</span><span class="ticker-item">·</span>
-        <span class="ticker-item">Você aprova</span><span class="ticker-item">·</span>
-        <span class="ticker-item">DNA configurado</span><span class="ticker-item">·</span>
-        <span class="ticker-item">Sistema editorial próprio</span><span class="ticker-item">·</span>
-        <span class="ticker-item">Template visual</span><span class="ticker-item">·</span>
-        <span class="ticker-item">Processo repetível</span><span class="ticker-item">·</span>
-        <span class="ticker-item">Você aprova</span><span class="ticker-item">·</span>
+    <div style="margin-top: 64px;" class="reveal">
+      <p class="s1-eyebrow">Deck de produto · by Nebu Company</p>
+      <div class="xl" style="margin-bottom: 48px;">
+        O processo<br>é o <em>conteúdo.</em>
       </div>
     </div>
 
-    <div style="margin-top: 80px;">
-      <p class="label">O problema</p>
-      <div class="lg">Posicionamento<br>complexo.<br>Conteúdo <em>genérico.</em></div>
-      <p class="body" style="margin-top: 24px;">Não porque faltam ideias. Porque o processo criativo não escala — cada post começa do zero, depende de inspiração e consome tempo de quem não deveria estar pensando nisso toda semana.</p>
-      <div class="prob-grid" style="margin-top: 32px;">
-        <div class="prob-cell"><div class="prob-n">01</div><div class="prob-text">Cada peça começa do zero. Sem contexto de marca, sem linha editorial, sem referência acumulada.</div></div>
-        <div class="prob-cell"><div class="prob-n">02</div><div class="prob-text">O processo depende de quem tem mais o que fazer. Consistência vira exceção, não regra.</div></div>
-        <div class="prob-cell"><div class="prob-n">03</div><div class="prob-text">O resultado soa genérico porque foi produzido sem estrutura — não por falta de talento.</div></div>
-        <div class="prob-cell"><div class="prob-n">04</div><div class="prob-text">O tempo gasto em produção é tempo tirado de quem deveria estar vendendo, entregando, pensando.</div></div>
+    <div class="ticker-wrap reveal">
+      <div class="ticker-track">
+        <span class="ticker-item">DNA configurado</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">Sistema editorial próprio</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">Template visual</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">Processo repetível</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">Você aprova</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">DNA configurado</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">Sistema editorial próprio</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">Template visual</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">Processo repetível</span><span class="ticker-item">✦</span>
+        <span class="ticker-item">Você aprova</span><span class="ticker-item">✦</span>
+      </div>
+    </div>
+
+    <div class="s1-foot reveal">
+      <p class="body-txt">Produção sistemática de conteúdo com inteligência instalada na marca. A Nebu configura, roda e entrega. Você aprova.</p>
+      <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">4 seções · 2026</p>
+    </div>
+
+    <!-- PROBLEMA -->
+    <div class="sub-divider reveal">
+      <p class="scene-label">O problema</p>
+      <div class="lg" style="margin-bottom: 28px;">
+        Posicionamento<br>complexo.<br>Conteúdo <em>genérico.</em>
+      </div>
+      <p class="body-txt" style="margin-bottom: 32px;">Não porque faltam ideias. Porque o processo criativo não escala — cada post começa do zero, depende de inspiração e consome tempo de quem não deveria estar pensando nisso toda semana.</p>
+      <div class="prob-grid">
+        <div class="prob-cell reveal">
+          <div class="prob-n">01</div>
+          <div class="prob-text">Cada peça começa do zero. Sem contexto de marca, sem linha editorial, sem referência acumulada.</div>
+        </div>
+        <div class="prob-cell reveal reveal-d1">
+          <div class="prob-n">02</div>
+          <div class="prob-text">O processo depende de quem tem mais o que fazer. Consistência vira exceção, não regra.</div>
+        </div>
+        <div class="prob-cell reveal reveal-d2">
+          <div class="prob-n">03</div>
+          <div class="prob-text">O resultado soa genérico porque foi produzido sem estrutura — não por falta de talento.</div>
+        </div>
+        <div class="prob-cell reveal reveal-d3">
+          <div class="prob-n">04</div>
+          <div class="prob-text">O tempo gasto em produção é tempo tirado de quem deveria estar vendendo, entregando, pensando.</div>
+        </div>
       </div>
     </div>
 
@@ -606,49 +693,53 @@
   ══════════════════════════════ -->
   <section class="sec" id="sec2">
 
-    <p class="label">O que é</p>
-    <div class="lg">Não é<br>automação.<br>É <em>produção.</em></div>
+    <p class="scene-label reveal">O que é</p>
+    <div class="lg reveal">Não é<br>automação.<br>É <em>produção.</em></div>
 
     <div class="def-block">
-      <div class="def-card">
+      <div class="def-card reveal">
         <p>Um processo de produção de conteúdo onde a IA é treinada no DNA da sua marca e opera sob supervisão direta. A Nebu configura, roda e entrega. Você aprova.</p>
         <p class="def-tagline">Produção sistemática com <em>inteligência instalada na marca</em></p>
       </div>
-      <div>
-        <p class="body">A diferença está em onde a inteligência fica. No ChatGPT, ela fica nos prompts — que somem. No sistema, ela fica no contexto de marca, nas linhas editoriais, nos templates.</p>
-        <p class="body" style="margin-top: 16px;">Isso é um ativo. <strong>Fica com você.</strong></p>
+      <div class="reveal reveal-d1">
+        <p class="body-txt">A diferença está em onde a inteligência fica. No ChatGPT, ela fica nos prompts — que somem. No sistema, ela fica no contexto de marca, nas linhas editoriais, nos templates.</p>
+        <p class="body-txt" style="margin-top: 16px;">Isso é um ativo. <strong>Fica com você.</strong></p>
       </div>
     </div>
 
-    <div style="margin-top: 80px;">
-      <p class="label">Como funciona</p>
-      <div class="lg">Quatro<br><em>etapas.</em></div>
+    <div class="sub-divider">
+      <p class="scene-label reveal">Como funciona</p>
+      <div class="lg reveal">Quatro<br><em>etapas.</em></div>
       <div class="steps-grid">
-        <div class="step-card">
+        <div class="step-card reveal">
           <span class="step-bg-n">1</span>
-          <div class="step-n">01</div>
-          <div class="step-name">Imersão</div>
+          <p class="step-tag">Etapa 01</p>
+          <p class="step-num">01</p>
+          <p class="step-title">Imersão</p>
           <p class="step-desc">Kickoff de 90 minutos para mapear quem você é. Tom de voz, valores, referências, o que você nunca diria. Isso vira o contexto permanente da IA.</p>
           <div class="step-detail"><strong>Entregável:</strong> documento de contexto de marca. Fica com você independente do contrato.</div>
         </div>
-        <div class="step-card">
+        <div class="step-card reveal reveal-d1">
           <span class="step-bg-n">2</span>
-          <div class="step-n">02</div>
-          <div class="step-name">Configuração</div>
+          <p class="step-tag">Etapa 02</p>
+          <p class="step-num">02</p>
+          <p class="step-title">Configuração</p>
           <p class="step-desc">Monto o sistema editorial — linhas de conteúdo, critérios de relevância, templates visuais adaptados à sua identidade.</p>
           <div class="step-detail"><strong>Entregável:</strong> ativo editorial completo. Não some se o contrato acabar — é seu.</div>
         </div>
-        <div class="step-card">
+        <div class="step-card reveal reveal-d2">
           <span class="step-bg-n">3</span>
-          <div class="step-n">03</div>
-          <div class="step-name">Produção</div>
+          <p class="step-tag">Etapa 03</p>
+          <p class="step-num">03</p>
+          <p class="step-title">Produção</p>
           <p class="step-desc">Cada semana: briefing de tema → geração → validação → design → entrega. Um carrossel com 9 slides, pronto para publicar.</p>
           <div class="step-detail"><strong>Resultado:</strong> soa como você. Não como ChatGPT.</div>
         </div>
-        <div class="step-card">
+        <div class="step-card reveal reveal-d3">
           <span class="step-bg-n">4</span>
-          <div class="step-n">04</div>
-          <div class="step-name">Manutenção</div>
+          <p class="step-tag">Etapa 04</p>
+          <p class="step-num">04</p>
+          <p class="step-title">Manutenção</p>
           <p class="step-desc">O sistema evolui com a marca. Novos temas, novas referências, ajustes de tom. Não reiniciamos do zero a cada ciclo.</p>
           <div class="step-detail"><strong>Como funciona:</strong> cada semana o sistema fica mais preciso.</div>
         </div>
@@ -662,33 +753,33 @@
   ══════════════════════════════ -->
   <section class="sec" id="sec3">
 
-    <p class="label">O que você precisa dar</p>
-    <div class="lg">Não é<br>pouco. Mas<br>é <em>claro.</em></div>
+    <p class="scene-label reveal">O que você precisa dar</p>
+    <div class="lg reveal">Não é<br>pouco. Mas<br>é <em>claro.</em></div>
     <div class="dar-grid">
-      <div class="dar-card">
+      <div class="dar-card reveal">
         <div class="dar-icon">⏱</div>
         <div class="dar-title">90 min no kickoff</div>
         <div class="dar-body">Uma vez. É o único momento em que você precisa estar de verdade — tudo sai daqui.</div>
       </div>
-      <div class="dar-card">
+      <div class="dar-card reveal reveal-d1">
         <div class="dar-icon">📁</div>
         <div class="dar-title">Material de marca</div>
         <div class="dar-body">Tom de voz, identidade visual, fotos reais. O que já existe — não precisa criar nada novo.</div>
       </div>
-      <div class="dar-card">
+      <div class="dar-card reveal reveal-d2">
         <div class="dar-icon">✅</div>
         <div class="dar-title">30–60 min/semana</div>
         <div class="dar-body">Você lê, aprova ou ajusta. Não produz. Não briefa. Não cria do zero.</div>
       </div>
     </div>
-    <div class="callout-warn">
+    <div class="callout-warn reveal">
       <strong>Aviso direto:</strong> se você não tem disponibilidade para a aprovação semanal, o sistema não funciona. Conteúdo com IA sem curadoria humana vira lixo com consistência.
     </div>
 
-    <div style="margin-top: 80px;">
-      <p class="label">O que você recebe</p>
-      <div class="lg">Três<br><em>ativos.</em></div>
-      <div class="recebe-rows">
+    <div class="sub-divider">
+      <p class="scene-label reveal">O que você recebe</p>
+      <div class="lg reveal">Três<br><em>ativos.</em></div>
+      <div class="recebe-rows reveal">
         <div class="recebe-row">
           <div class="recebe-lbl">Carrosseis prontos</div>
           <div class="recebe-desc">Texto estruturado, layout indicado slide a slide — <strong>pronto para entrar no Figma</strong> ou na ferramenta da sua equipe. Publicação imediata.</div>
@@ -704,11 +795,11 @@
       </div>
     </div>
 
-    <div style="margin-top: 80px;">
-      <p class="label">Tempo economizado</p>
-      <div class="lg">A conta<br>é <em>simples.</em></div>
+    <div class="sub-divider">
+      <p class="scene-label reveal">Tempo economizado</p>
+      <div class="lg reveal">A conta<br>é <em>simples.</em></div>
       <div class="tempo-compare">
-        <div class="tempo-col">
+        <div class="tempo-col reveal">
           <div class="tempo-head">Produção manual / carrossel</div>
           <div class="tempo-body">
             <div class="tempo-big" style="color: var(--muted2);">4–8h</div>
@@ -716,7 +807,7 @@
             <p class="tempo-note">Pauta, texto, revisões, briefing para design. Todo ciclo começa do zero.</p>
           </div>
         </div>
-        <div class="tempo-col">
+        <div class="tempo-col reveal reveal-d1">
           <div class="tempo-head">Com o sistema</div>
           <div class="tempo-body">
             <div class="tempo-big" style="color: var(--red);">30–45min</div>
@@ -725,7 +816,7 @@
           </div>
         </div>
       </div>
-      <div class="callout-info">
+      <div class="callout-info reveal">
         Em 4 carrosseis por mês: você para de gastar entre <strong>16 e 32 horas</strong> em produção e passa a gastar <strong>2 a 4</strong>.
       </div>
     </div>
@@ -737,38 +828,45 @@
   ══════════════════════════════ -->
   <section class="sec" id="sec4">
 
-    <p class="label">Por que não é só pedir pro ChatGPT</p>
-    <div class="lg">ChatGPT<br>não sabe<br>quem <em>você é.</em></div>
+    <p class="scene-label reveal">Por que não é só pedir pro ChatGPT</p>
+    <div class="lg reveal">ChatGPT<br>não sabe<br>quem <em>você é.</em></div>
 
     <div class="diff-grid">
-      <div class="diff-card">
+      <div class="diff-card reveal">
         <div class="diff-tag">Diferencial 01</div>
         <div class="diff-title">DNA configurado</div>
         <div class="diff-body">A IA opera dentro do contexto da sua marca — não de uma genérica. Cada prompt carrega quem você é.</div>
       </div>
-      <div class="diff-card">
+      <div class="diff-card reveal reveal-d1">
         <div class="diff-tag">Diferencial 02</div>
         <div class="diff-title">Sistema editorial</div>
         <div class="diff-body">Cada tema passa por critérios de relevância e linha editorial definidos para você. Não para todo mundo.</div>
       </div>
-      <div class="diff-card">
+      <div class="diff-card reveal reveal-d2">
         <div class="diff-tag">Diferencial 03</div>
         <div class="diff-title">Template visual</div>
         <div class="diff-body">O texto sai estruturado para design — não é texto livre que alguém ainda precisa transformar em conteúdo.</div>
       </div>
-      <div class="diff-card">
+      <div class="diff-card reveal reveal-d3">
         <div class="diff-tag">Diferencial 04</div>
         <div class="diff-title">Processo</div>
         <div class="diff-body">Consistência não vem de inspiração. Vem de processo repetível — e é isso que esse sistema entrega.</div>
       </div>
     </div>
 
-    <div class="cta-block">
+    <!-- CTA FINAL -->
+    <div class="cta-block reveal">
       <span class="cta-bg">→</span>
-      <div class="xl" style="margin-bottom: 28px;">Um kickoff<br>de <em>90 min.</em></div>
-      <p class="body" style="max-width: 540px;">Você entende como o sistema funciona aplicado à sua marca. A Nebu entende se consegue entregar o que você precisa. <strong>Sem compromisso de continuidade.</strong></p>
+      <div class="xl" style="margin-bottom: 28px;">
+        Um kickoff<br>de <em>90 min.</em>
+      </div>
+      <p class="body-txt" style="max-width: 540px; margin-bottom: 0;">
+        Você entende como o sistema funciona aplicado à sua marca. A Nebu entende se consegue entregar o que você precisa. <strong>Sem compromisso de continuidade.</strong>
+      </p>
       <div class="cta-foot">
-        <a class="btn" href="https://wa.me/5571996551316" target="_blank" rel="noopener">Falar com a Nebu →</a>
+        <a class="btn-pill" href="https://wa.me/5571996551316" target="_blank" rel="noopener">
+          Falar com a Nebu →
+        </a>
         <div style="text-align: right;">
           <div class="cta-sig">Nebu<em>.</em></div>
           <div class="cta-tagline">Sistemas para marcas que têm algo real a dizer.</div>
@@ -779,5 +877,19 @@
   </section>
 
 </div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
