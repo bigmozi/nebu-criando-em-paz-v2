@@ -1,0 +1,81 @@
+/**
+ * tokens.css
+ * Design tokens — Criando em Paz
+ * Camada semântica: mapeia decisões de design em variáveis nomeadas por intenção,
+ * não por valor. Todos os outros arquivos referenciam daqui.
+ */
+
+@layer base {
+  :root {
+    /* ── PRIMITIVOS (não usar diretamente no markup) ── */
+    --primitive-black:       #0a0a0a;
+    --primitive-black-mid:   #111111;
+    --primitive-black-soft:  #161616;
+    --primitive-red:         #c8102e;
+    --primitive-red-dark:    #a50d25;
+    --primitive-white:       #ffffff;
+    --primitive-gray-600:    #555555;
+    --primitive-gray-400:    #888888;
+    --primitive-gray-900:    #1e1e1e;
+    --primitive-gray-800:    #2a2a2a;
+
+    /* ── TOKENS SEMÂNTICOS ── */
+
+    /* Superfícies */
+    --surface-base:          var(--primitive-black);
+    --surface-raised:        var(--primitive-black-mid);
+    --surface-overlay:       var(--primitive-black-soft);
+
+    /* Bordas */
+    --border-subtle:         var(--primitive-gray-900);
+    --border-default:        var(--primitive-gray-800);
+
+    /* Texto */
+    --text-primary:          var(--primitive-white);
+    --text-secondary:        var(--primitive-gray-400);
+    --text-tertiary:         var(--primitive-gray-600);
+
+    /* Marca */
+    --brand-accent:          var(--primitive-red);
+    --brand-accent-hover:    var(--primitive-red-dark);
+    --brand-accent-soft:     rgba(200, 16, 46, 0.12);
+
+    /* Tipografia */
+    --font-display:          'neue-haas-grotesk-display', sans-serif;
+    --font-body:             'neue-haas-grotesk-text', 'Plus Jakarta Sans', sans-serif;
+
+    /* Escala de tipo — fluida */
+    --text-hero:             clamp(3.8rem, 9vw, 9rem);
+    --text-headline-lg:      clamp(2.6rem, 5.5vw, 5.5rem);
+    --text-headline-md:      clamp(2.4rem, 5vw, 5rem);
+    --text-headline-sm:      clamp(1.6rem, 2.5vw, 2.2rem);
+    --text-display-xl:       clamp(3.5rem, 8vw, 8rem);
+    --text-step-num:         5rem;
+    --text-label:            0.75rem;
+    --text-eyebrow:          0.78rem;
+    --text-meta:             0.72rem;
+    --text-body:             1rem;
+    --text-body-sm:          0.93rem;
+    --text-body-xs:          0.9rem;
+
+    /* Espaçamento — escala semântica */
+    --space-section:         100px;
+    --space-section-sm:      72px;
+    --space-block:           64px;
+    --space-component:       48px;
+    --space-item:            32px;
+    --space-gap:             16px;
+    --space-inline:          12px;
+
+    /* Raios */
+    --radius-card:           20px;
+    --radius-card-sm:        12px;
+    --radius-pill:           100px;
+
+    /* Movimento */
+    --ease-reveal:           cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-reveal:       0.7s;
+    --duration-fast:         0.2s;
+    --duration-medium:       0.35s;
+  }
+}

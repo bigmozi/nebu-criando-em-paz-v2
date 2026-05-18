@@ -1,0 +1,231 @@
+/**
+ * styles.css
+ * Criando em Paz — estilos que complementam o Tailwind.
+ * Usa tokens de tokens.css. Só define o que utility classes não cobrem:
+ * - clamp() / fluid type
+ * - keyframes e animações
+ * - pseudo-elements com conteúdo
+ * - grid específicos com cálculos
+ * - estados JS (.visible, .open, .scrolled)
+ */
+
+/* ── FONTS ── */
+/* Fontes via Adobe Fonts — neue-haas-grotesk-display + neue-haas-grotesk-text */
+/* Link de embed vai no <head> do HTML: https://use.typekit.net/yrc2zyy.css */
+
+/* ── RESET BASE ── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--surface-base);
+    color: var(--text-primary);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--surface-base); }
+  ::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 2px; }
+}
+
+/* ── KEYFRAMES ── */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── COMPONENTES: o que Tailwind não cobre ── */
+@layer components {
+
+  /* Fluid type — não existe utility pra clamp() */
+  .text-hero     { font-size: var(--text-hero); }
+  .text-hdg-lg   { font-size: var(--text-headline-lg); }
+  .text-hdg-md   { font-size: var(--text-headline-md); }
+  .text-hdg-sm   { font-size: var(--text-headline-sm); }
+  .text-disp-xl  { font-size: var(--text-display-xl); }
+
+  /* Scene label — linha decorativa via pseudo */
+  .scene-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: var(--text-label);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 56px;
+  }
+
+  .scene-label::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--text-tertiary);
+    flex-shrink: 0;
+  }
+
+  /* Ticker — animação contínua */
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 30s linear infinite;
+  }
+
+  /* Oferta dot — pulse animado */
+  .oferta-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-accent);
+    flex-shrink: 0;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  /* Reveal animation — estado inicial + transição */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity var(--duration-reveal) var(--ease-reveal),
+                transform var(--duration-reveal) var(--ease-reveal);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* Nav scrolled — border que aparece com JS */
+  nav.scrolled { border-color: var(--border-subtle) !important; }
+
+  /* Sticky bar — estado JS */
+  #sticky-bar {
+    transform: translateX(-50%) translateY(80px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration-fast) ease,
+                transform var(--duration-fast) ease;
+  }
+
+  #sticky-bar.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* FAQ accordion — max-height controlado por JS via classe */
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--duration-medium) ease,
+                padding var(--duration-medium) ease;
+    padding-bottom: 0;
+  }
+
+  .faq-item.open .faq-a  { max-height: 300px; padding-bottom: 28px; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* Antes/depois icon prefix via pseudo */
+  .avd-cell {
+    padding: 18px 28px;
+    font-size: var(--text-body-xs);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  /* Oferta / brand feature — seta prefix */
+  .feature-item {
+    display: flex;
+    gap: 12px;
+    font-size: var(--text-body-xs);
+    color: var(--text-secondary);
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .feature-item::before {
+    content: '↗';
+    color: var(--brand-accent);
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  /* Oferta includes list */
+  .oferta-includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: var(--text-body-xs);
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .oferta-includes li::before {
+    content: '↗';
+    color: var(--brand-accent);
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+}
+
+/* ── RESPONSIVE — breakpoints que alteram layouts de grid ── */
+@media (max-width: 900px) {
+  #sticky-bar {
+    left: 16px !important;
+    right: 16px !important;
+    transform: translateY(80px) !important;
+    border-radius: 16px !important;
+    width: auto !important;
+  }
+
+  #sticky-bar.visible { transform: translateY(0) !important; }
+
+  .hero-foot   { flex-direction: column; align-items: flex-start; }
+  .hero-actions { align-items: flex-start; }
+
+  .counter-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .counter-item {
+    padding: 24px 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .counter-item:last-child { border-bottom: none; }
+
+  .dor-items    { grid-template-columns: 1fr !important; }
+  .avd-grid     { grid-template-columns: 1fr !important; }
+  .metodo-intro { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .steps        { grid-template-columns: 1fr !important; }
+  .brand-inner  { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .prova-grid   { grid-template-columns: 1fr !important; }
+
+  .oferta-card  { grid-template-columns: 1fr !important; }
+  .oferta-left  { border-right: none !important; border-bottom: 1px solid var(--border-subtle); }
+  .oferta-top   { flex-direction: column !important; align-items: flex-start !important; }
+
+  .faq-inner    { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .faq-headline { position: static !important; }
+}
