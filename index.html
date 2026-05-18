@@ -5,60 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Criando em Paz — Integre IA na sua rotina. Qualquer área.</title>
 
-  <!-- Tailwind CDN (play) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Tailwind config: mapeia tokens semânticos como utilities customizadas -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            /* Tokens de cor semânticos → Tailwind */
-            surface: {
-              base:    '#0a0a0a',
-              raised:  '#111111',
-              overlay: '#161616',
-            },
-            border: {
-              subtle:  '#1e1e1e',
-              default: '#2a2a2a',
-            },
-            text: {
-              primary:   '#ffffff',
-              secondary: '#888888',
-              tertiary:  '#555555',
-            },
-            brand: {
-              accent:     '#c8102e',
-              'accent-h': '#a50d25',
-              soft:       'rgba(200,16,46,0.12)',
-            },
+            surface: { base: '#0a0a0a', raised: '#111111', overlay: '#161616' },
+            border:  { subtle: '#1e1e1e', default: '#2a2a2a' },
+            text:    { primary: '#ffffff', secondary: '#888888', tertiary: '#555555' },
+            brand:   { accent: '#c8102e', 'accent-h': '#a50d25' },
           },
           fontFamily: {
             display: ['"neue-haas-grotesk-display"', 'sans-serif'],
             body:    ['"neue-haas-grotesk-text"', '"Plus Jakarta Sans"', 'sans-serif'],
           },
-          borderRadius: {
-            card: '20px',
-            'card-sm': '12px',
-            pill: '100px',
-          },
-          transitionTimingFunction: {
-            reveal: 'cubic-bezier(0.16, 1, 0.3, 1)',
-          },
+          borderRadius: { card: '20px', 'card-sm': '12px', pill: '100px' },
+          transitionTimingFunction: { reveal: 'cubic-bezier(0.16, 1, 0.3, 1)' },
         },
       },
     }
   </script>
 
-  <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/yrc2zyy.css" />
-
-  <!-- Tokens semânticos (fonte de verdade) -->
   <link rel="stylesheet" href="tokens.css" />
-
-  <!-- Estilos que Tailwind não cobre: clamp, keyframes, pseudo-elements, estados JS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -79,11 +49,9 @@
     </div>
     <a href="https://wa.me/5571996551316?text=Oi%2C+quero+marcar+minha+sess%C3%A3o+do+Criando+em+Paz"
        target="_blank" rel="noopener"
-       class="bg-brand-accent hover:bg-brand-accent-h
-              text-text-primary font-display font-bold
-              text-[0.9rem] tracking-[0.1em] uppercase
-              px-6 py-3 rounded-pill
-              transition-colors duration-200 whitespace-nowrap">
+       class="bg-brand-accent hover:bg-brand-accent-h text-text-primary font-display font-bold
+              text-[0.9rem] tracking-[0.1em] uppercase px-6 py-3 rounded-pill
+              transition-colors duration-200 whitespace-nowrap no-underline">
       Contratar →
     </a>
   </div>
@@ -106,8 +74,7 @@
     </div>
     <a href="#oferta"
        class="font-display font-bold text-[0.78rem] tracking-[0.12em] uppercase no-underline
-              text-text-primary px-5 py-2.5
-              border border-border-default rounded-pill
+              text-text-primary px-5 py-2.5 border border-border-default rounded-pill
               hover:bg-brand-accent hover:border-brand-accent
               transition-[background,border-color] duration-200">
       Contratar →
@@ -116,32 +83,24 @@
 
   <!-- ── HERO ───────────────────────────────────────────── -->
   <section id="hero"
-    class="min-h-svh px-12 pt-20 pb-20
-           flex flex-col justify-end
-           border-b border-border-subtle">
-    <p class="font-body text-[0.78rem] tracking-[0.16em] uppercase text-text-secondary mb-8">
-      Consultoria de IA · by Nebu Company
-    </p>
-    <h1 class="text-hero font-display font-extrabold leading-[0.95] uppercase tracking-[-0.03em] max-w-[1100px] mb-14">
+    class="min-h-svh px-12 pt-20 pb-20 flex flex-col justify-end">
+    <h1 class="font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+               text-[clamp(5rem,12vw,13rem)] max-w-[1200px] mb-16">
       Você cria.<br>A IA faz<br>o resto<br><em class="not-italic text-brand-accent">por você.</em>
     </h1>
     <div class="hero-foot flex justify-between items-end gap-10 flex-wrap pt-10 border-t border-border-subtle">
-      <p class="text-base text-text-secondary leading-[1.7] max-w-[420px]">
+      <p class="text-base text-text-secondary leading-[1.7] max-w-[440px]">
         Sabe aquela parte do seu trabalho que consome tempo, drena energia e você já sabe que dá pra automatizar — mas nunca parou pra estruturar? A gente faz isso junto, em 2 horas.
       </p>
       <div class="hero-actions flex flex-col items-end gap-3">
         <a href="#oferta"
-           class="inline-flex items-center gap-2.5
-                  bg-brand-accent hover:bg-brand-accent-h
-                  text-text-primary font-display font-bold
-                  text-base tracking-[0.08em] uppercase no-underline
-                  px-8 py-4 rounded-pill
-                  transition-[background,transform] duration-200 hover:-translate-y-px">
+           class="inline-flex items-center gap-2.5 bg-brand-accent hover:bg-brand-accent-h
+                  text-text-primary font-display font-bold text-base tracking-[0.08em] uppercase no-underline
+                  px-8 py-4 rounded-pill transition-[background,transform] duration-200 hover:-translate-y-px">
           Contratar agora →
         </a>
         <a href="#metodo"
-           class="inline-flex items-center gap-2.5
-                  bg-transparent text-text-secondary
+           class="inline-flex items-center gap-2.5 bg-transparent text-text-secondary
                   font-display font-semibold text-[0.85rem] tracking-[0.1em] uppercase no-underline
                   px-6 py-3 rounded-pill border border-border-default
                   hover:text-text-primary hover:border-text-secondary
@@ -154,7 +113,7 @@
   </section>
 
   <!-- ── TICKER ─────────────────────────────────────────── -->
-  <div class="overflow-hidden border-b border-border-subtle bg-brand-accent py-3" aria-hidden="true">
+  <div class="overflow-hidden bg-brand-accent py-3" aria-hidden="true">
     <div class="ticker-track">
       <span class="font-display font-bold text-[0.85rem] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap px-9">Criando em Paz</span><span class="text-white/40 px-2">✦</span>
       <span class="font-display font-bold text-[0.85rem] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap px-9">IA no seu processo</span><span class="text-white/40 px-2">✦</span>
@@ -162,7 +121,6 @@
       <span class="font-display font-bold text-[0.85rem] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap px-9">Individual</span><span class="text-white/40 px-2">✦</span>
       <span class="font-display font-bold text-[0.85rem] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap px-9">Sem virar dev</span><span class="text-white/40 px-2">✦</span>
       <span class="font-display font-bold text-[0.85rem] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap px-9">Método Nebu</span><span class="text-white/40 px-2">✦</span>
-      <!-- duplicate for seamless loop -->
       <span class="font-display font-bold text-[0.85rem] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap px-9">Criando em Paz</span><span class="text-white/40 px-2">✦</span>
       <span class="font-display font-bold text-[0.85rem] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap px-9">IA no seu processo</span><span class="text-white/40 px-2">✦</span>
       <span class="font-display font-bold text-[0.85rem] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap px-9">Qualquer área</span><span class="text-white/40 px-2">✦</span>
@@ -173,7 +131,7 @@
   </div>
 
   <!-- ── COUNTER ────────────────────────────────────────── -->
-  <div class="counter-grid grid grid-cols-3 px-12 border-b border-border-subtle">
+  <div class="counter-grid grid grid-cols-3 px-12">
     <div class="counter-item reveal px-10 py-20 border-r border-border-subtle first:pl-0">
       <p class="font-display font-extrabold text-[clamp(3.5rem,7vw,6rem)] text-text-primary leading-none mb-1.5">+200</p>
       <p class="text-[0.75rem] tracking-[0.14em] uppercase text-text-secondary">Pessoas atendidas</p>
@@ -189,9 +147,9 @@
   </div>
 
   <!-- ── DOR ────────────────────────────────────────────── -->
-  <section id="dor" class="px-12 py-[100px] border-b border-border-subtle bg-surface-base">
-    <p class="scene-label reveal">O problema</p>
-    <h2 class="text-hdg-lg font-display font-extrabold leading-none uppercase tracking-[-0.02em] max-w-[900px] mb-20 reveal">
+  <section id="dor" class="px-12 py-[100px] bg-surface-base">
+    <h2 class="font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+               text-[clamp(3.8rem,7vw,8rem)] max-w-[900px] mb-20 reveal">
       Você sabe que<br>dá pra fazer<br>mais rápido.<br><em class="not-italic text-brand-accent">Só não sabe como.</em>
     </h2>
 
@@ -215,7 +173,8 @@
     </div>
 
     <div class="mt-16 p-12 bg-surface-overlay border border-border-default rounded-card border-l-[3px] border-l-brand-accent reveal">
-      <p class="font-display font-extrabold text-hdg-sm uppercase tracking-[-0.02em] leading-[1.15] mb-4">
+      <p class="font-display font-extrabold uppercase tracking-[-0.03em] leading-[1.1]
+                text-[clamp(1.8rem,3vw,3rem)] mb-4">
         O problema não é a ferramenta.<br>É que ninguém mapeou o seu processo.
       </p>
       <p class="text-[0.95rem] text-text-secondary leading-[1.75] max-w-[680px]">
@@ -225,16 +184,12 @@
   </section>
 
   <!-- ── ANTES / DEPOIS ─────────────────────────────────── -->
-  <section id="avd" class="px-12 py-[100px] border-b border-border-subtle bg-surface-base">
-    <div class="avd-head mb-14 reveal">
-      <p class="scene-label">Transformação</p>
-      <h2 class="text-hdg-md font-display font-extrabold leading-none uppercase tracking-[-0.02em]">
-        Antes <em class="not-italic text-brand-accent">vs</em><br>depois.
-      </h2>
-    </div>
+  <section id="avd" class="px-12 py-[100px] bg-surface-base">
+    <h2 class="font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+               text-[clamp(3.8rem,7vw,8rem)] mb-14 reveal">
+      Antes <em class="not-italic text-brand-accent">vs</em><br>depois.
+    </h2>
     <div class="avd-grid grid grid-cols-2 gap-4 reveal">
-
-      <!-- Coluna SEM -->
       <div class="bg-surface-raised border border-border-subtle rounded-card overflow-hidden">
         <div class="px-7 py-4 border-b border-border-subtle font-display font-bold text-[0.75rem] tracking-[0.2em] uppercase text-text-tertiary">
           Sem o Criando em Paz
@@ -246,8 +201,6 @@
         <div class="avd-cell"><span class="text-text-tertiary mr-2">✗</span> Processo que depende de você estar a 100% pra funcionar</div>
         <div class="avd-cell border-b-0"><span class="text-text-tertiary mr-2">✗</span> Mais horas, mais desgaste, mesma sensação de pouco avanço</div>
       </div>
-
-      <!-- Coluna COM -->
       <div class="bg-surface-raised border border-border-subtle rounded-card overflow-hidden">
         <div class="px-7 py-4 border-b border-border-subtle font-display font-bold text-[0.75rem] tracking-[0.2em] uppercase text-brand-accent">
           Com o Criando em Paz
@@ -259,16 +212,15 @@
         <div class="avd-cell"><span class="text-brand-accent mr-2">✓</span> Processo que roda mesmo nos dias que você não tá a 100%</div>
         <div class="avd-cell border-b-0"><span class="text-brand-accent mr-2">✓</span> Menos ruído. Mais entrega. Sem culpa por não saber mais cedo.</div>
       </div>
-
     </div>
   </section>
 
   <!-- ── MÉTODO ─────────────────────────────────────────── -->
-  <section id="metodo" class="px-12 py-[100px] border-b border-border-subtle bg-surface-base">
+  <section id="metodo" class="px-12 py-[100px] bg-surface-base">
     <div class="metodo-intro grid grid-cols-2 gap-20 items-end mb-16">
       <div class="reveal">
-        <p class="scene-label">O método</p>
-        <h2 class="text-hdg-md font-display font-extrabold leading-none uppercase tracking-[-0.02em]">
+        <h2 class="font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+                   text-[clamp(3.8rem,7vw,8rem)]">
           Como o<br>método<br><em class="not-italic text-brand-accent">funciona.</em>
         </h2>
       </div>
@@ -278,38 +230,33 @@
     </div>
 
     <div class="steps grid grid-cols-3 gap-4">
-
       <div class="reveal flex flex-col bg-surface-raised border border-border-subtle rounded-card p-10 hover:border-border-default transition-colors duration-200">
         <p class="font-body text-[0.68rem] tracking-[0.18em] uppercase text-brand-accent mb-8">Antes da sessão</p>
         <p class="font-display font-extrabold text-[5rem] text-border-default leading-none mb-6 tracking-[-0.02em]">01</p>
-        <p class="font-display font-extrabold text-[1.5rem] uppercase tracking-[0.02em] mb-4 leading-[1.1]">Mapeamento de processo</p>
+        <p class="font-display font-extrabold text-[1.6rem] uppercase tracking-[-0.02em] mb-4 leading-[1.05]">Mapeamento de processo</p>
         <p class="text-[0.9rem] text-text-secondary leading-[1.7]">Você preenche um formulário detalhado sobre sua rotina, suas tarefas e onde sente mais atrito. Em 48h a gente analisa o que pode ser automatizado, o que pode ser acelerado, e o que precisa continuar sendo 100% você.</p>
       </div>
-
       <div class="reveal reveal-delay-1 flex flex-col bg-surface-raised border border-border-subtle rounded-card p-10 hover:border-border-default transition-colors duration-200">
         <p class="font-body text-[0.68rem] tracking-[0.18em] uppercase text-brand-accent mb-8">A sessão</p>
         <p class="font-display font-extrabold text-[5rem] text-border-default leading-none mb-6 tracking-[-0.02em]">02</p>
-        <p class="font-display font-extrabold text-[1.5rem] uppercase tracking-[0.02em] mb-4 leading-[1.1]">2h Individuais</p>
+        <p class="font-display font-extrabold text-[1.6rem] uppercase tracking-[-0.02em] mb-4 leading-[1.05]">2h Individuais</p>
         <p class="text-[0.9rem] text-text-secondary leading-[1.7]">Videochamada de 2h dedicada à sua rotina. A gente parte do que você faz de verdade — não de um exemplo genérico. O resultado é um sistema que respeita seu ritmo, seu contexto, o que você não abre mão.</p>
       </div>
-
       <div class="reveal reveal-delay-2 flex flex-col bg-surface-raised border border-border-subtle rounded-card p-10 hover:border-border-default transition-colors duration-200">
         <p class="font-body text-[0.68rem] tracking-[0.18em] uppercase text-brand-accent mb-8">Depois da sessão</p>
         <p class="font-display font-extrabold text-[5rem] text-border-default leading-none mb-6 tracking-[-0.02em]">03</p>
-        <p class="font-display font-extrabold text-[1.5rem] uppercase tracking-[0.02em] mb-4 leading-[1.1]">Plano de Integração</p>
+        <p class="font-display font-extrabold text-[1.6rem] uppercase tracking-[-0.02em] mb-4 leading-[1.05]">Plano de Integração</p>
         <p class="text-[0.9rem] text-text-secondary leading-[1.7]">Você sai com um documento com os próximos movimentos priorizados: quais ferramentas usar, em quais tarefas, em que ordem. Não teoria — aplicação. Algo concreto na mão.</p>
       </div>
-
     </div>
   </section>
 
   <!-- ── ADD-ON ─────────────────────────────────────────── -->
-  <section id="brand" class="px-12 py-[100px] border-b border-border-subtle bg-surface-raised">
+  <section id="brand" class="px-12 py-[100px] bg-surface-raised">
     <div class="brand-inner grid grid-cols-2 gap-20 items-center">
-
       <div class="reveal">
-        <p class="scene-label">Add-on opcional</p>
-        <h2 class="text-hdg-md font-display font-extrabold leading-none uppercase tracking-[-0.02em] mb-6">
+        <h2 class="font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+                   text-[clamp(3.2rem,5.5vw,6.5rem)] mb-6">
           Mapa de<br><em class="not-italic text-brand-accent">Processo™</em>
         </h2>
         <p class="text-base text-text-secondary leading-[1.75] mb-7">
@@ -317,11 +264,10 @@
         </p>
         <p class="text-[0.82rem] text-text-tertiary leading-[1.6]">Adicionado no momento da contratação. Entregue antes da sessão.</p>
       </div>
-
       <div class="reveal reveal-delay-1 bg-surface-overlay border border-border-default rounded-card overflow-hidden">
         <div class="p-9 border-b border-border-default">
           <p class="font-body text-[0.68rem] tracking-[0.18em] uppercase text-brand-accent mb-4">● Disponível como add-on</p>
-          <p class="font-display font-extrabold text-[1.8rem] uppercase leading-none mb-1">Mapa de Processo™</p>
+          <p class="font-display font-extrabold text-[2rem] uppercase leading-none mb-1">Mapa de Processo™</p>
           <p class="text-[0.82rem] text-text-tertiary">Análise de rotina · Entregue em 48h</p>
         </div>
         <div class="p-9 border-b border-border-default flex flex-col gap-3.5">
@@ -336,66 +282,58 @@
           </div>
           <a href="https://wa.me/5571996551316?text=Oi%2C+quero+a+sess%C3%A3o+do+Criando+em+Paz+com+o+Mapa+de+Processo"
              target="_blank" rel="noopener"
-             class="bg-brand-accent hover:bg-brand-accent-h
-                    text-text-primary font-display font-bold
+             class="bg-brand-accent hover:bg-brand-accent-h text-text-primary font-display font-bold
                     text-[0.85rem] tracking-[0.08em] uppercase no-underline
-                    px-5 py-3 rounded-pill
-                    transition-colors duration-200">
+                    px-5 py-3 rounded-pill transition-colors duration-200">
             Adicionar →
           </a>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ── PROVA ──────────────────────────────────────────── -->
-  <section id="prova" class="px-12 py-[100px] border-b border-border-subtle bg-surface-base">
-    <p class="scene-label reveal">Prova</p>
-    <h2 class="text-hdg-md font-display font-extrabold leading-none uppercase tracking-[-0.02em] mb-16 reveal">
+  <section id="prova" class="px-12 py-[100px] bg-surface-base">
+    <h2 class="font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+               text-[clamp(3.8rem,7vw,8rem)] mb-16 reveal">
       Quem<br>passou <em class="not-italic text-brand-accent">por aqui.</em>
     </h2>
-
     <div class="prova-grid grid grid-cols-3 gap-4">
-
       <div class="reveal flex flex-col bg-surface-raised border border-border-subtle rounded-card p-10 gap-6">
-        <p class="font-display font-extrabold text-[1.05rem] uppercase tracking-[-0.01em] leading-[1.2] text-text-primary">40% menos tempo em documentação</p>
+        <p class="font-display font-extrabold text-[1.15rem] uppercase tracking-[-0.02em] leading-[1.2] text-text-primary">40% menos tempo em documentação</p>
         <p class="text-[0.93rem] text-text-secondary leading-[1.7] flex-1">Sempre soube que tinha como automatizar. Só não sabia por onde começar sem perder o controle do que eu produzia. A sessão me deu exatamente isso — um caminho que faz sentido pra minha rotina.</p>
         <p class="font-body text-[0.75rem] text-text-tertiary tracking-[0.08em] uppercase pt-5 border-t border-border-subtle">Profissional de saúde</p>
       </div>
-
       <div class="reveal reveal-delay-1 flex flex-col bg-surface-raised border border-border-subtle rounded-card p-10 gap-6">
-        <p class="font-display font-extrabold text-[1.05rem] uppercase tracking-[-0.01em] leading-[1.2] text-text-primary">Entrega em metade do tempo, sem perder a voz</p>
+        <p class="font-display font-extrabold text-[1.15rem] uppercase tracking-[-0.02em] leading-[1.2] text-text-primary">Entrega em metade do tempo, sem perder a voz</p>
         <p class="text-[0.93rem] text-text-secondary leading-[1.7] flex-1">Tinha medo que IA fosse deixar tudo parecido, genérico. A consultoria me mostrou como usar sem abrir mão do que é meu. Hoje uso todo dia — e ninguém percebe que tem IA envolvida.</p>
         <p class="font-body text-[0.75rem] text-text-tertiary tracking-[0.08em] uppercase pt-5 border-t border-border-subtle">Profissional de texto e linguagem</p>
       </div>
-
       <div class="reveal reveal-delay-2 flex flex-col bg-surface-raised border border-border-subtle rounded-card p-10 gap-6">
-        <p class="font-display font-extrabold text-[1.05rem] uppercase tracking-[-0.01em] leading-[1.2] text-text-primary">Primeira vez que IA funcionou de verdade pra mim</p>
+        <p class="font-display font-extrabold text-[1.15rem] uppercase tracking-[-0.02em] leading-[1.2] text-text-primary">Primeira vez que IA funcionou de verdade pra mim</p>
         <p class="text-[0.93rem] text-text-secondary leading-[1.7] flex-1">Tentei de tudo antes. Curso, tutorial, thread, prompts prontos. Nada encaixou. Foi a primeira vez que alguém partiu do que eu faço — não de um caso hipotético — e montou algo que eu consigo usar.</p>
         <p class="font-body text-[0.75rem] text-text-tertiary tracking-[0.08em] uppercase pt-5 border-t border-border-subtle">Profissional autônomo</p>
       </div>
-
     </div>
   </section>
 
   <!-- ── OFERTA ─────────────────────────────────────────── -->
-  <section id="oferta" class="px-12 py-[100px] border-b border-border-subtle bg-surface-base">
+  <section id="oferta" class="px-12 py-[100px] bg-surface-base">
     <div class="oferta-top flex justify-between items-end gap-10 mb-12 flex-wrap reveal">
-      <h2 class="text-disp-xl font-display font-extrabold leading-[0.92] tracking-[-0.03em] uppercase">
+      <h2 class="font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+                 text-[clamp(5rem,11vw,12rem)]">
         Bora<em class="not-italic text-brand-accent">?</em>
       </h2>
       <p class="text-[0.95rem] text-text-secondary leading-[1.7] max-w-[360px]">
         Vagas limitadas por semana. Quando fecha, fecha. Você agenda agora ou espera a próxima janela.
       </p>
     </div>
-
     <div class="oferta-card grid grid-cols-2 bg-surface-raised border border-border-subtle rounded-card overflow-hidden reveal">
       <div class="oferta-left p-12 border-r border-border-subtle">
         <p class="flex items-center gap-2 font-body text-[0.7rem] tracking-[0.16em] uppercase text-brand-accent mb-6">
           <span class="oferta-dot"></span> Vagas abertas — Maio 2026
         </p>
-        <p class="font-display font-extrabold text-[2rem] uppercase leading-none mb-1.5">Criando em Paz™</p>
+        <p class="font-display font-extrabold text-[2.2rem] uppercase leading-none mb-1.5">Criando em Paz™</p>
         <p class="text-[0.82rem] text-text-tertiary mb-9">Consultoria Individual · Sessão de 2h · Qualquer área</p>
         <ul class="oferta-includes flex flex-col gap-3.5 list-none">
           <li>Mapeamento da sua rotina antes da sessão (diagnóstico em 48h)</li>
@@ -405,22 +343,18 @@
           <li>Garantia — se não fizer sentido, a gente resolve</li>
         </ul>
       </div>
-
       <div class="p-12 flex flex-col justify-between">
         <div>
           <p class="text-[0.7rem] tracking-[0.16em] uppercase text-text-tertiary mb-2">Investimento</p>
-          <p class="font-display font-extrabold text-[clamp(3rem,6vw,5rem)] leading-none mb-1.5">R$147</p>
+          <p class="font-display font-extrabold text-[clamp(3.5rem,6vw,6rem)] leading-none mb-1.5">R$147</p>
           <p class="text-[0.82rem] text-text-tertiary">Pagamento único · Acesso imediato ao agendamento</p>
         </div>
         <div>
           <a href="https://wa.me/5571996551316?text=Oi%2C+quero+marcar+minha+sess%C3%A3o+do+Criando+em+Paz"
              target="_blank" rel="noopener"
-             class="block w-full text-center
-                    bg-brand-accent hover:bg-brand-accent-h
-                    text-text-primary font-display font-bold
-                    text-[1.1rem] tracking-[0.08em] uppercase no-underline
-                    px-8 py-5 rounded-pill mb-4
-                    transition-colors duration-200">
+             class="block w-full text-center bg-brand-accent hover:bg-brand-accent-h
+                    text-text-primary font-display font-bold text-[1.1rem] tracking-[0.08em] uppercase no-underline
+                    px-8 py-5 rounded-pill mb-4 transition-colors duration-200">
             Contratar agora →
           </a>
           <p class="text-[0.75rem] text-text-tertiary text-center mb-4">Pagamento seguro · Agendamento imediato · Garantia inclusa</p>
@@ -435,19 +369,17 @@
   </section>
 
   <!-- ── FAQ ───────────────────────────────────────────── -->
-  <section id="faq" class="px-12 py-[100px] border-b border-border-subtle bg-surface-base">
+  <section id="faq" class="px-12 py-[100px] bg-surface-base">
     <div class="faq-inner grid grid-cols-2 gap-20 items-start">
-      <h2 class="faq-headline text-hdg-md font-display font-extrabold leading-none uppercase tracking-[-0.02em] sticky top-20 reveal">
+      <h2 class="faq-headline font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+                 text-[clamp(3rem,5vw,5.5rem)] sticky top-20 reveal">
         Perguntas<br>que sempre<br><em class="not-italic text-brand-accent">aparecem.</em>
       </h2>
-
       <div class="faq-list flex flex-col">
-
         <div class="faq-item border-t border-border-subtle reveal">
           <button class="faq-q w-full bg-transparent border-0 text-left cursor-pointer
-                         font-display font-bold text-[1.05rem] uppercase tracking-[0.03em]
-                         py-6 flex justify-between items-center text-text-primary gap-5"
-                  aria-expanded="false">
+                         font-display font-bold text-[1.15rem] uppercase tracking-[-0.01em]
+                         py-6 flex justify-between items-center text-text-primary gap-5" aria-expanded="false">
             Funciona pra qualquer tipo de trabalho?
             <span class="faq-icon text-[1.5rem] font-light text-brand-accent transition-transform duration-[350ms] flex-shrink-0">+</span>
           </button>
@@ -455,12 +387,10 @@
             Funciona pra qualquer rotina onde tem tarefas repetitivas, produção de texto, análise, organização ou atendimento. Se você faz algo todo dia que consome tempo e atenção — e não precisa necessariamente ser você fazendo —, a gente encontra onde a IA entra.
           </div>
         </div>
-
         <div class="faq-item border-t border-border-subtle reveal">
           <button class="faq-q w-full bg-transparent border-0 text-left cursor-pointer
-                         font-display font-bold text-[1.05rem] uppercase tracking-[0.03em]
-                         py-6 flex justify-between items-center text-text-primary gap-5"
-                  aria-expanded="false">
+                         font-display font-bold text-[1.15rem] uppercase tracking-[-0.01em]
+                         py-6 flex justify-between items-center text-text-primary gap-5" aria-expanded="false">
             Preciso saber de tecnologia?
             <span class="faq-icon text-[1.5rem] font-light text-brand-accent transition-transform duration-[350ms] flex-shrink-0">+</span>
           </button>
@@ -468,12 +398,10 @@
             Não. Essa é exatamente a proposta. A consultoria é feita pra quem não quer virar especialista — quer usar IA como ferramenta. A gente parte do que você já faz e mostra como encaixar sem depender de conhecimento técnico.
           </div>
         </div>
-
         <div class="faq-item border-t border-border-subtle reveal">
           <button class="faq-q w-full bg-transparent border-0 text-left cursor-pointer
-                         font-display font-bold text-[1.05rem] uppercase tracking-[0.03em]
-                         py-6 flex justify-between items-center text-text-primary gap-5"
-                  aria-expanded="false">
+                         font-display font-bold text-[1.15rem] uppercase tracking-[-0.01em]
+                         py-6 flex justify-between items-center text-text-primary gap-5" aria-expanded="false">
             É diferente de curso de IA?
             <span class="faq-icon text-[1.5rem] font-light text-brand-accent transition-transform duration-[350ms] flex-shrink-0">+</span>
           </button>
@@ -481,12 +409,10 @@
             Completamente. Curso te ensina a ferramenta de forma abstrata. Aqui a gente analisa a sua rotina e constrói a aplicação junto. Você não aprende sobre IA em geral — você sai com um plano de como usar na sua realidade específica.
           </div>
         </div>
-
         <div class="faq-item border-t border-border-subtle reveal">
           <button class="faq-q w-full bg-transparent border-0 text-left cursor-pointer
-                         font-display font-bold text-[1.05rem] uppercase tracking-[0.03em]
-                         py-6 flex justify-between items-center text-text-primary gap-5"
-                  aria-expanded="false">
+                         font-display font-bold text-[1.15rem] uppercase tracking-[-0.01em]
+                         py-6 flex justify-between items-center text-text-primary gap-5" aria-expanded="false">
             Já tentei usar IA antes e não funcionou.
             <span class="faq-icon text-[1.5rem] font-light text-brand-accent transition-transform duration-[350ms] flex-shrink-0">+</span>
           </button>
@@ -494,12 +420,10 @@
             Ótimo ponto de partida — você já sabe o que não funciona. A maioria das tentativas fracassa porque a pessoa usa a ferramenta sem mapear o processo primeiro. Aqui a gente começa pelo processo. A ferramenta vem depois.
           </div>
         </div>
-
-        <div class="faq-item border-t border-border-subtle border-b border-b-border-subtle reveal">
+        <div class="faq-item border-t border-border-subtle border-b border-border-subtle reveal">
           <button class="faq-q w-full bg-transparent border-0 text-left cursor-pointer
-                         font-display font-bold text-[1.05rem] uppercase tracking-[0.03em]
-                         py-6 flex justify-between items-center text-text-primary gap-5"
-                  aria-expanded="false">
+                         font-display font-bold text-[1.15rem] uppercase tracking-[-0.01em]
+                         py-6 flex justify-between items-center text-text-primary gap-5" aria-expanded="false">
             E se não fizer sentido pra mim?
             <span class="faq-icon text-[1.5rem] font-light text-brand-accent transition-transform duration-[350ms] flex-shrink-0">+</span>
           </button>
@@ -507,27 +431,22 @@
             Garantia inclusa. Se você sentir que não encaixou no seu momento, a gente resolve. Sem burocracia. Sem perguntas.
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ── FINAL CTA ──────────────────────────────────────── -->
-  <section id="final"
-    class="min-h-[80svh] px-12 py-[100px] bg-surface-base
-           flex flex-col justify-center">
-    <h2 class="text-hero font-display font-extrabold leading-[0.92] uppercase tracking-[-0.03em] max-w-[1200px] mb-14 reveal">
+  <section id="final" class="min-h-[80svh] px-12 py-[100px] bg-surface-base flex flex-col justify-center">
+    <h2 class="font-display font-extrabold uppercase tracking-[-0.04em] leading-[0.88]
+               text-[clamp(5rem,12vw,13rem)] max-w-[1200px] mb-14 reveal">
       Chega de<br>deixar a IA<br><em class="not-italic text-brand-accent">parada.</em>
     </h2>
     <div class="flex items-center gap-5 flex-wrap reveal reveal-delay-1">
       <a href="https://wa.me/5571996551316?text=Oi%2C+quero+marcar+minha+sess%C3%A3o+do+Criando+em+Paz"
          target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2.5
-                bg-brand-accent hover:bg-brand-accent-h
-                text-text-primary font-display font-bold
-                text-base tracking-[0.08em] uppercase no-underline
-                px-8 py-4 rounded-pill
-                transition-[background,transform] duration-200 hover:-translate-y-px">
+         class="inline-flex items-center gap-2.5 bg-brand-accent hover:bg-brand-accent-h
+                text-text-primary font-display font-bold text-base tracking-[0.08em] uppercase no-underline
+                px-8 py-4 rounded-pill transition-[background,transform] duration-200 hover:-translate-y-px">
         Contratar agora →
       </a>
       <p class="text-[0.78rem] text-text-tertiary tracking-[0.06em]">vagas limitadas por semana ↘</p>
@@ -542,60 +461,37 @@
     <p class="text-[0.72rem] text-text-tertiary tracking-[0.1em] uppercase">
       © 2026 · Feito com cuidado pela
       <a href="https://nebucompany.com.br" target="_blank" rel="noopener"
-         class="text-text-secondary hover:text-brand-accent no-underline transition-colors duration-200">
-        Nebu Company
-      </a>
+         class="text-text-secondary hover:text-brand-accent no-underline transition-colors duration-200">Nebu Company</a>
     </p>
   </footer>
 
   <!-- ── JS ────────────────────────────────────────────── -->
   <script>
-    // Scroll reveal
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          revealObserver.unobserve(e.target);
-        }
-      });
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
     }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // Sticky bar — aparece depois do hero, some na oferta
-    const stickyBar  = document.getElementById('sticky-bar');
-    const heroEl     = document.getElementById('hero');
-    const ofertaEl   = document.getElementById('oferta');
-
+    const stickyBar = document.getElementById('sticky-bar');
+    const heroEl    = document.getElementById('hero');
+    const ofertaEl  = document.getElementById('oferta');
     const stickyObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.target === heroEl)   stickyBar.classList.toggle('visible', !e.isIntersecting);
+        if (e.target === heroEl)  stickyBar.classList.toggle('visible', !e.isIntersecting);
         if (e.target === ofertaEl && e.isIntersecting) stickyBar.classList.remove('visible');
       });
     }, { threshold: 0.05 });
+    stickyObs.observe(heroEl); stickyObs.observe(ofertaEl);
 
-    stickyObs.observe(heroEl);
-    stickyObs.observe(ofertaEl);
-
-    // Nav scrolled border
     const navEl = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      navEl.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
+    window.addEventListener('scroll', () => { navEl.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
 
-    // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
-        const item   = btn.closest('.faq-item');
+        const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
+        document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
       });
     });
   </script>
