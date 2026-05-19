@@ -55,29 +55,7 @@
   .text-hdg-sm   { font-size: var(--text-headline-sm); }
   .text-disp-xl  { font-size: var(--text-display-xl); }
 
-  /* Scene label — linha decorativa via pseudo */
-  .scene-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--font-display);
-    font-size: var(--text-label);
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-    margin-bottom: 56px;
-  }
-
-  .scene-label::before {
-    content: '';
-    display: block;
-    width: 28px;
-    height: 1px;
-    background: var(--text-tertiary);
-    flex-shrink: 0;
-  }
-
+ 
   /* Ticker — animação contínua */
   .ticker-track {
     display: flex;
