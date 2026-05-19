@@ -196,7 +196,7 @@
 
   #sticky-bar.visible { transform: translateY(0) !important; }
 
-  .hero-foot   { flex-direction: column; align-items: flex-start; }
+  .hero-foot   { flex-direction: column; align-items: flex-end; }
   .hero-actions { align-items: flex-start; }
 
   .counter-grid {
